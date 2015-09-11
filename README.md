@@ -18,7 +18,13 @@ cf push <YOUR_APP_NAME> -m 128M
 ````
 UPDATE: Deploy with REDIS
 ```script
-cf push hello-world-rafa-counter -m 128M
-cf bind-service hello-world-rafa-counterRedisCloud
-cf restage hello-world-rafa-counter
+cf push <YOUR_APP_NAME> -m 128M
+cf bind-service <YOUR_APP_NAME> RedisCloud
+cf restage <YOUR_APP_NAME>
+```
+UPDATE: Add NEWRELIC Instrumentation
+```script
+cf push <YOUR_APP_NAME> -m 128M
+cf set-env <YOUR_APP_NAME> NEW_RELIC_APP_NAME <YOUR_APP_NAME>
+cf set-env <YOUR_APP_NAME> NEW_RELIC_LICENSE_KEY <YOUR_NEWRELIC_LIC_KEY> 
 ```

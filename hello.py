@@ -3,7 +3,8 @@ import uuid
 import redis
 import json
 from flask import Flask, session
-
+import newrelic.agent
+newrelic.agent.initialize()
 
 app = Flask(__name__)
 my_uuid = str(uuid.uuid1())
