@@ -8,7 +8,7 @@ my_uuid = str(uuid.uuid1())
 BLUE = "#0099FF"
 GREEN = "#33CC33"
 
-COLOR = GREEN
+COLOR = BLUE
 
 @app.route('/')
 def hello():
