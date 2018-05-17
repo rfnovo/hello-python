@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: rafawebdemo
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      run: rafawebdemo
+  template:
+    metadata:
+      labels:
+        run: rafawebdemo
+    spec:
+      containers:
+      - name: rafawebdemo
+        image: docker.io/rfnovo/rafawebdemo:v1
+        ports:
+        - containerPort: 5000
+
