@@ -1,16 +1,27 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    name: rafawebdemo
+  name: my-service
+spec:
+  ports:
+    - port: 5000
+  selector:
+    app: rafawebdemo
+  type: NodePort
+
+---
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: rafawebdemo
 spec:
   replicas: 2
-  selector:
-    matchLabels:
-      run: rafawebdemo
   template:
     metadata:
       labels:
-        run: rafawebdemo
+        app: rafawebdemo
     spec:
       containers:
       - name: rafawebdemo
